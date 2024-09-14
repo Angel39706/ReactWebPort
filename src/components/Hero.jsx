@@ -1,5 +1,6 @@
 import React from "react";
 import heroImage from '../assets/me/MyImage.jpg';
+import resume from '../assets/resume/Angelmartinez2024.pdf';
 
 const Hero = () => {
     return (
@@ -17,11 +18,11 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-white sm:text-lg my-6 lg:text-l">
-                        Obtained my bachelor's in Computer Engineering with Internship and fellowship experiences
+                        Graduated with a Bachelor's in Computer Engineering, with software development experience through internships and a fellowship.
                     </p>
 
                     <div className="my-8">
-                        <a href='https://docs.google.com/document/d/1mh3SvKJPd9paD7Z2ldn0AN7zVPRkIE_v7_lqPD1Na4o/edit?usp=sharing' className="px-6 py-3 w-full rounded-xl mr-4 
+                        <a href={resume} className="px-6 py-3 w-full rounded-xl mr-4 
                             bg-gradient-to-br from-blue-400 to-teal-600 text-white">
                             Download Resume
                         </a>
