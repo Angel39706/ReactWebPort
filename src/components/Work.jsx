@@ -2,6 +2,7 @@ import React from "react";
 import nGap from "../assets/workexp/ngap.webp";
 import mdnr from "../assets/workexp/MDNREnergyLogo.png";
 import headstart from "../assets/workexp/theheadstarter_logo.jpeg";
+import SBcounty from "../assets/workexp/SBLogo.jpeg";
 
 const Work = () => {
     return (
@@ -11,6 +12,18 @@ const Work = () => {
                 <p className="text-gray-400">Most Recent Experiences</p>
             </div>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {/* Card for SB County */}
+                <div className="bg-gray-800 text-white p-5 rounded-lg shadow-lg flex flex-col items-center">
+                    <img src={SBcounty} alt="Headstarter AI" className="w-full object-cover mb-4 rounded-md" />
+                    <h3 className="text-md font-semibold mb-2">San Bernardino County - Behavioral Health</h3>
+                    <p className="text-gray-400 text-sm mb-2">Automated Systems Technician</p>
+                    <p className="text-gray-400 text-sm mb-4">November 2024 - Present</p>
+                    <ul className="text-gray-300 list-disc list-inside space-y-2">
+                        <li>Develop and maintain SQL queries to prepare, analyze, and publish data for the Behavioral Health Management Information System, ensuring alignment with business rules and system controls.</li>
+                        <li>Configure, test, and document system settings, custom forms, and configurations within myAvatar, supporting smooth deployment and troubleshooting.</li>
+                        <li>Resolve system control issues through Help Desk support, troubleshooting technical challenges, and assisting end-users.</li>
+                    </ul>
+                </div>
                 {/* Card for Headstarter AI */}
                 <div className="bg-gray-800 text-white p-5 rounded-lg shadow-lg flex flex-col items-center">
                     <img src={headstart} alt="Headstarter AI" className="w-full h-32 object-cover mb-4 rounded-md" />
