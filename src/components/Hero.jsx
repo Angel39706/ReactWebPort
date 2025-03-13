@@ -18,7 +18,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-white sm:text-lg my-6 lg:text-l">
-                        Graduated with a Bachelor's in Computer Engineering, with software development experience through internships and a fellowship.
+                        With a Bachelor's degree in Computer Engineering, I thrive on tackling complex challenges. My journey through internships and a fellowship has provided me with hands-on experience in backend development, front-end development, and iOS development. I’m always eager to learn and grow in the ever-evolving tech landscape.
                     </p>
 
                     <div className="my-8">
