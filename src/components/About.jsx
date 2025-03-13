@@ -59,7 +59,7 @@ const About = () => {
                 <div className="flex-1 md:mx-6" ref={aboutRef}>
                     <h2 className="text-4xl font-bold mb-4 primary-color"> About Me</h2>
                     <p className="text-base lg:text-lg">
-                        Hello! I'm an aspiring software engineer who graduated with a bachelor's of science degree in computer engineering from California State University, San Bernardino. When I’m not diving into coding or enjoying video games, you’ll also find me at the gym. I’m also a huge car enthusiast and can’t wait to travel the world and experience new adventures.
+                        Hello! When I’m not diving into code or playing video games, you’ll also find me at the gym. I’m also a huge car enthusiast and can’t wait to travel the world and experience new adventures.
                     </p>
                 </div>
 
