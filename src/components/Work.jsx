@@ -1,71 +1,73 @@
-import React from "react";
-import nGap from "../assets/workexp/ngap.webp";
-import mdnr from "../assets/workexp/MDNREnergyLogo.png";
-import headstart from "../assets/workexp/theheadstarter_logo.jpeg";
-import SBcounty from "../assets/workexp/SBLogo.jpeg";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
+    const experienceRef = useRef(null);
+
+    useEffect(() => {
+        const experienceAnimation = gsap.fromTo(
+            experienceRef.current,
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: experienceRef.current,
+                    start: "top 80%",
+                    end: "bottom 50%",
+                    toggleActions: "play none none reset",
+                },
+            }
+        );
+
+        return () => {
+            experienceAnimation.kill();
+        };
+    }, []);
+
     return (
-        <div className="max-w-[1200px] mx-auto p-5" id="experience">
-            <div className="pb-8">
-                <p className="text-4xl mb-3 font-bold primary-color">Professional Experience</p>
-                <p className="text-gray-400">Most Recent Experiences</p>
-            </div>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {/* Card for SB County */}
-                <div className="bg-gray-800 text-white p-5 rounded-lg shadow-lg flex flex-col items-center">
-                    <img src={SBcounty} alt="Headstarter AI" className="w-full object-cover mb-4 rounded-md" />
-                    <h3 className="text-md font-semibold mb-2">San Bernardino County - Behavioral Health</h3>
-                    <p className="text-gray-400 text-sm mb-2">Automated Systems Technician</p>
-                    <p className="text-gray-400 text-sm mb-4">November 2024 - Present</p>
-                    <ul className="text-gray-300 list-disc list-inside space-y-2">
-                        <li>Develop and maintain SQL queries to prepare, analyze, and publish data for the Behavioral Health Management Information System, ensuring alignment with business rules and system controls.</li>
-                        <li>Configure, test, and document system settings, custom forms, and configurations within myAvatar, supporting smooth deployment and troubleshooting.</li>
-                        <li>Resolve system control issues through Help Desk support, troubleshooting technical challenges, and assisting end-users.</li>
-                    </ul>
+        <div className="mt-12 max-w-[1200px] mx-auto bg-black p-6 rounded-xl shadow-lg" ref={experienceRef}>
+            <h2 className="text-4xl font-bold mb-4 primary-color text-center pt-20" id="experience">Work Experience</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                {/* Experience Card 1 */}
+                <div className="bg-black p-6 rounded-xl shadow-lg border border-white">
+                    <h3 className="text-lg font-bold text-white mb-2">Automated Systems Technician - San Bernardino County</h3>
+                    <p className="text-sm text-gray-400 mb-4">November 2024 - Present</p>
+                    <p className="text-base lg:text-lg text-white">
+                        Develop and maintain SQL queries to prepare, analyze, and publish data for the Behavioral Health Management Information System, ensuring alignment with business rules and system controls. Configure, test, and document system settings, custom forms, and configurations within myAvatar, supporting smooth deployment and troubleshooting.
+                    </p>
                 </div>
-                {/* Card for Headstarter AI */}
-                <div className="bg-gray-800 text-white p-5 rounded-lg shadow-lg flex flex-col items-center">
-                    <img src={headstart} alt="Headstarter AI" className="w-full h-32 object-cover mb-4 rounded-md" />
-                    <h3 className="text-xl font-semibold mb-2">Headstarter AI</h3>
-                    <p className="text-gray-400 text-sm mb-2">Software Engineering Fellow</p>
-                    <p className="text-gray-400 text-sm mb-4">July 2024 - September 2024</p>
-                    <ul className="text-gray-300 list-disc list-inside space-y-2">
-                        <li>Building a Pantry Tracker application using ReactJS, NextJS, and Firebase, showcasing my ability to create full-stack solutions.</li>
-                        <li>Collaborating on AI Customer Support and AI Flashcards projects leveraging OpenAI, NextJS, AWS, and StripeAPI, demonstrating teamwork and advanced tech proficiency.</li>
-                        <li>Participating in weekly hackathons and demo sessions, refining my project management, collaboration, and presentation skills in a fast-paced environment.</li>
-                        <li>Selected Track A for Final Project: Aiming to achieve 1,000 people on a waitlist, 1,000 accounts created, or $1,000 in revenue. This track aligns with our team's strengths and provides clear targets for demonstrating success.</li>
-                    </ul>
+
+                {/* Experience Card 2 */}
+                <div className="bg-black p-6 rounded-xl shadow-lg border border-white">
+                    <h3 className="text-lg font-bold text-white mb-2">Software Engineering Fellow - HeadStarter AI</h3>
+                    <p className="text-sm text-gray-400 mb-4">July 2024 - September 2024</p>
+                    <p className="text-base lg:text-lg text-white">
+                        Developed applications using React, NextJS, Firebase, PostgreSQL, and OpenAI API, including a Pantry Tracker and AI-powered projects for customer support and flashcards. I also worked with AWS and Stripe API to integrate advanced features. Through weekly hackathons, I refined my project management and collaboration skills.
+                    </p>
                 </div>
-                
-                {/* Card for nGap */}
-                <div className="bg-gray-800 text-white p-5 rounded-lg shadow-lg flex flex-col items-center">
-                    <img src={nGap} alt="nGap" className="w-full h-32 object-cover mb-4 rounded-md" />
-                    <h3 className="text-xl font-semibold mb-2">nGap Incorporated</h3>
-                    <p className="text-gray-400 text-sm mb-2">Backend Developer Intern</p>
-                    <p className="text-gray-400 text-sm mb-4">Sept 2023 - Dec 2023</p>
-                    <ul className="text-gray-300 list-disc list-inside space-y-2">
-                        <li>Prototyped and developed backend services in a microservice environment using Docker, Python, and RabbitMQ, including RESTful API endpoint creation with Flask for seamless communication.</li>
-                        <li>Documented Backend APIs using Swagger and facilitated integration with Swagger UI, ensuring readability and smooth developer collaboration.</li>
-                        <li>Implemented an asynchronous consumer and producer with C# and RabbitMQ to consume sensitive documents that were encoded in base64 and enrich the data within the Transformation layer of ETL.</li>
-                        <li>Developed RESTful API endpoints using Python and its library Flask.</li>
-                        <li>Utilized CRUD operations to develop business logic regarding user-generated records with the usage of SQL and Python's ORM SQLAlchemy.</li>
-                    </ul>
+
+                {/* Experience Card 3 */}
+                <div className="bg-black p-6 rounded-xl shadow-lg border border-white">
+                    <h3 className="text-xl font-bold text-white mb-2">Backend Engineer Intern - nGap Incorporated</h3>
+                    <p className="text-sm text-gray-400 mb-4">Sept 2023 - Dec 2023</p>
+                    <p className="text-base lg:text-lg text-white">
+                        Prototyped and developed backend services in a microservice environment using Docker, Python, and RabbitMQ, including RESTful API endpoint creation with Flask for seamless communication. Implemented an asynchronous consumer and producer with C# and RabbitMQ to consume sensitive documents that were encoded in base64 and enrich the data within the Transformation layer of ETL. Utilized CRUD operations to develop business logic regarding user-generated records with the usage of SQL and Python's ORM SQLAlchemy.
+                    </p>
                 </div>
-                
-                {/* Card for MDNR Energy Technology LLC */}
-                <div className="bg-gray-800 text-white p-5 rounded-lg shadow-lg flex flex-col items-center">
-                    <img src={mdnr} alt="MDNR Energy Technology LLC" className="w-full h-32 object-cover mb-4 rounded-md" />
-                    <h3 className="text-xl font-semibold mb-2">MDNR Energy Technology LLC</h3>
-                    <p className="text-gray-400 text-sm mb-2">iOS Developer Intern</p>
-                    <p className="text-gray-400 text-sm mb-4">May 2023 - Aug 2023</p>
-                    <ul className="text-gray-300 list-disc list-inside space-y-2">
-                        <li>Prototyped and developed backend services in a microservice environment using Docker, Python, and RabbitMQ, including RESTful API endpoint creation with Flask for seamless communication.</li>
-                        <li>Documented Backend APIs using Swagger and facilitated integration with Swagger UI, ensuring readability and smooth developer collaboration.</li>
-                        <li>Implemented an asynchronous consumer and producer with C# and RabbitMQ to consume sensitive documents that were encoded in base64 and enrich the data within the Transformation layer of ETL.</li>
-                        <li>Developed RESTful API endpoints using Python and its library Flask.</li>
-                        <li>Utilized CRUD operations to develop business logic regarding user-generated records with the usage of SQL and Python's ORM SQLAlchemy.</li>
-                    </ul>
+
+                {/* Experience Card 4 */}
+                <div className="bg-black p-6 rounded-xl shadow-lg border border-white">
+                    <h3 className="text-xl font-bold text-white mb-2">iOS Developer Intern- MDNR Energy Technology LLC</h3>
+                    <p className="text-sm text-gray-400 mb-4">May 2023 - Aug 2023</p>
+                    <p className="text-base lg:text-lg text-white">
+                    Developed an iOS application with SwiftUI along with the MVVM architecture, integrating real-time API updates resulting a 25% efficiency boost in power consumption. Implemented NSNotifications for power system tracking, resulting in decrease of inefficiencies by 30%, cutting unnecessary costs through timely alerts for deviations. Visualized power consumption data throughout the day by generating interactive graphs, enabling users to analyze power consumption patterns to maintain efficiency in power consumption
+                    </p>
                 </div>
             </div>
         </div>
