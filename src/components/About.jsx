@@ -1,23 +1,71 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Skills from "./Skills"; // Import Skills component
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-    return (
-        <div className="text-white max-w-[1200px] mx-auto my-12 p-5" id="about">
-            <div className="mt-4 md:mt-0 text-left flex flex-col md:flex-row h-full justify-start py-6 md:py-0">
+    const aboutRef = useRef(null);
+    const skillsRef = useRef(null); // New ref for Skills section
 
-                <div className="flex-1 md:mx-6">
+    useEffect(() => {
+        // Animation for About Me section
+        const aboutAnimation = gsap.fromTo(
+            aboutRef.current,
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.0,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: aboutRef.current,
+                    start: "top 80%",
+                    end: "bottom 50%",
+                    toggleActions: "play none none reset",
+                },
+            }
+        );
+
+        // Animation for Skills section
+        const skillsAnimation = gsap.fromTo(
+            skillsRef.current,
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.0,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: skillsRef.current,
+                    start: "top 80%",
+                    end: "bottom 50%",
+                    toggleActions: "play none none reset",
+                },
+            }
+        );
+
+        return () => {
+            aboutAnimation.kill();
+            skillsAnimation.kill();
+        };
+    }, []);
+
+    return (
+        <div className="text-white max-w-[1200px] mx-auto mt-24 my-12 p-5 scroll-mt-24" id="about">
+            <div className="flex flex-col md:flex-row gap-8">
+                {/* About Me Section */}
+                <div className="flex-1 md:mx-6" ref={aboutRef}>
                     <h2 className="text-4xl font-bold mb-4 primary-color"> About Me</h2>
                     <p className="text-base lg:text-lg">
                         Hello! I'm an aspiring software engineer who graduated with a bachelor's of science degree in computer engineering from California State University, San Bernardino. When I’m not diving into coding or enjoying video games, you’ll also find me at the gym. I’m also a huge car enthusiast and can’t wait to travel the world and experience new adventures.
                     </p>
                 </div>
 
-                <div className="flex-1 md:mx-6 mt-8 md:mt-0">
-                    <h2 className="text-4xl font-bold mb-4 primary-color"> Current Projects</h2>
-                    <p className="text-base lg:text-lg">
-                        As part of the Headstarter Fellowship, I am focusing on several key projects to enhance my web development skills over the next seven weeks. These include developing a personal website, building a Pantry Tracker application, and collaborating on AI-based customer support and flashcard applications. These projects allow me to apply modern technologies like React, Node.js, Docker, Firebase, Python, and PostgreSQL while gaining hands-on experience in full-stack development.
-                    </p>
-
+                {/* Tech Stack Section */}
+                <div className="flex-1" ref={skillsRef}>
+                    <Skills />
                 </div>
             </div>
         </div>

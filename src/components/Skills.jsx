@@ -1,55 +1,45 @@
 import React from "react";
-import html from "../assets/skills/html.png"
-import css from "../assets/skills/css.png"
-import javascript from "../assets/skills/javascript.png"
-import python from "../assets/skills/python.png"
-import swift from "../assets/skills/swift.png"
-import node from "../assets/skills/nodejs.png"
-import docker from "../assets/skills/docker.png"
-import postgres from "../assets/skills/postgres.png"
+import python from "../assets/skills/python.png";
+import swift from "../assets/skills/swift.png";
+import reactLogo from "../assets/skills/react.png";
+import node from "../assets/skills/nodejs.png";
+import postgres from "../assets/skills/postgres.png";
+import mongoDB from "../assets/skills/MongoDB.png";
 
 const Skills = () => {
-    return (
-        <div className="border border-gray-600 bg-black text-gray-400 md:h-[150px] mx-w-[1200px] mx-auto grid grid-cols-3
-            place-items-center md:flex md:justify-between md:items-center">
-            <h2 className="text-gray-700 text-2xl md:text-4xl font-bold m-4">
-                 Tech <br/> Stack
-            </h2>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={python} alt=""/>
-                <p className="mt-2">Python</p>
-            </div>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={swift} alt=""/>
-                <p className="mt-2">Swift</p>
-            </div>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={javascript} alt=""/>
-                <p className="mt-2">JavaScript</p>
-            </div>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={node} alt=""/>
-                <p className="mt-2">Node.js</p>
-            </div>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={docker} alt=""/>
-                <p className="mt-2">Docker</p>
-            </div>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={postgres} alt=""/>
-                <p className="mt-2">PostgreSQL</p>
-            </div>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={html} alt=""/>
-                <p className="mt-2">HTML5</p>
-            </div>
-            <div className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]">
-                <img src={css} alt=""/>
-                <p className="mt-2">CSS3</p>
-            </div>
-
+  return (
+    <div className="max-w-[1200px] mx-auto bg-black p-6 rounded-xl shadow-lg border border-white text-white">
+      <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-6">
+        Tech Stack
+      </h2>
+      <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex items-center space-x-2">
+          <img src={python} alt="Python" className="w-[40px] md:w-[60px]" />
+          <p className="text-sm md:text-base">Python</p>
         </div>
-    );
-}
+        <div className="flex items-center space-x-2">
+          <img src={swift} alt="Swift" className="w-[40px] md:w-[60px]" />
+          <p className="text-sm md:text-base">Swift</p>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src={reactLogo} alt="React" className="w-[40px] md:w-[60px]" />
+          <p className="text-sm md:text-base">React</p>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src={node} alt="Node.js" className="w-[40px] md:w-[60px]" />
+          <p className="text-sm md:text-base">Node.js</p>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src={postgres} alt="PostgreSQL" className="w-[40px] md:w-[60px]" />
+          <p className="text-sm md:text-base">PostgreSQL</p>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src={mongoDB} alt="MongoDB" className="w-[40px] md:w-[60px h-[60px]" />
+          <p className="text-sm md:text-base">MongoDB</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Skills
+export default Skills;

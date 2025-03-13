@@ -1,12 +1,12 @@
 import React from "react";
 import heroImage from '../assets/me/MyImage.jpg';
-import resume from '../assets/resume/Angelmartinez2024.pdf';
+import resume from '../assets/resume/AngelMartinezResume2025.pdf';
 
 const Hero = () => {
     return (
-        <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[70vh] mx-auto py-8 bg-black'>
+        <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[70vh] mx-auto py-8 bg-black mt-[80px] scroll-mt-[80px]' id="home">
             <div className='col-span-1 my-auto mx-auto w-[300px] h-auto lg:w-[400px]'>           
-                    <img src={heroImage} alt='hero section'/> 
+            <img src={heroImage} alt='hero section' className='h-[250px] sm:h-[400px] md:h-[500px] rounded-2xl mx-auto sm:mx-0' />
             </div>  
                 <div className="col-span-2 px-5 my-auto">
 
