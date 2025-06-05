@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Skills from "./Skills"; // Import Skills component
+import Skills from "./Skills";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const aboutRef = useRef(null);
-    const skillsRef = useRef(null); // New ref for Skills section
+    const skillsRef = useRef(null);
 
     useEffect(() => {
         // Animation for About Me section
