@@ -39,7 +39,7 @@ const Work = () => {
                     <h3 className="text-lg font-bold text-white mb-2">Automated Systems Technician - San Bernardino County</h3>
                     <p className="text-sm text-gray-400 mb-4">November 2024 - Present</p>
                     <p className="text-base lg:text-lg text-white">
-                        Develop and maintain SQL queries to prepare, analyze, and publish data for the Behavioral Health Management Information System, ensuring alignment with business rules and system controls. Configure, test, and document system settings, custom forms, and configurations within myAvatar, supporting smooth deployment and troubleshooting.
+                    Analyze practitioner enrollment and EHR data using Excel and Microsoft SQL Server to support credentialing, reporting, and operational decisions. Provide application support for Avatar and Order Connect, including access configuration and Okta authentication. Administer role-based and clearance-based access to ensure appropriate system permissions and protection of patient health information. Develop and deliver training materials and for practitioner enrollment workflows. Execute testing scripts to validate new features and discipline-specific business requirements.
                     </p>
                 </div>
 
@@ -48,7 +48,7 @@ const Work = () => {
                     <h3 className="text-lg font-bold text-white mb-2">Software Engineering Fellow - HeadStarter AI</h3>
                     <p className="text-sm text-gray-400 mb-4">July 2024 - September 2024</p>
                     <p className="text-base lg:text-lg text-white">
-                        Developed applications using React, NextJS, Firebase, PostgreSQL, and OpenAI API, including a Pantry Tracker and AI-powered projects for customer support and flashcards. I also worked with AWS and Stripe API to integrate advanced features. Through weekly hackathons, I refined my project management and collaboration skills.
+                    Crafted a Pantry Tracker application using ReactJS, NextJS, and Firebase following CRUD operations. Launched a Flashcard web application utilizing Stripe API,transitioning hosting from AWS EC2 to Vercel for automatic builds, deployment, and scaling. Designed and maintained backend infrastructure for an AI complaint detection web app using Flask, SQLAlchemy, and PostgreSQL, resulting in finalist placement in a hackathon among 50 competing teams.
                     </p>
                 </div>
 
@@ -66,7 +66,7 @@ const Work = () => {
                     <h3 className="text-xl font-bold text-white mb-2">iOS Developer Intern- MDNR Energy Technology LLC</h3>
                     <p className="text-sm text-gray-400 mb-4">May 2023 - Aug 2023</p>
                     <p className="text-base lg:text-lg text-white">
-                    Developed an iOS application with SwiftUI along with the MVVM architecture, integrating real-time API updates resulting a 25% efficiency boost in power consumption. Implemented NSNotifications for power system tracking, resulting in decrease of inefficiencies by 30%, cutting unnecessary costs through timely alerts for deviations. Visualized power consumption data throughout the day by generating interactive graphs, enabling users to analyze power consumption patterns to maintain efficiency in power consumption
+                    Developed an iOS application with SwiftUI along with the MVVM architecture, integrating real-time API updates resulting a 25% efficiency boost in power consumption. Implemented NSNotifications for power system tracking, resulting in decrease of inefficiencies by 30%, cutting unnecessary costs through timely alerts for deviations. Visualized power consumption data throughout the day by generating interactive graphs, enabling users to analyze power consumption patterns to maintain efficiency in power consumption.
                     </p>
                 </div>
             </div>
